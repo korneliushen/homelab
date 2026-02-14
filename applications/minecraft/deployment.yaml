@@ -36,7 +36,7 @@ spec:
             - name: MOTD
               value: ""
             - name: DIFFICULTY
-              value: "hard"
+              value: "easy"
             - name: OPS
               value: "korneliushen"
             - name: MAX_PLAYERS
