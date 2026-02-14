@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: playit-agent
+  namespace: playitgg
+  labels:
+    app: playit-agent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: playit-agent
+  template:
+    metadata:
+      labels:
+        app: playit-agent
+    spec:
+      containers:
+        - name: playit-agent
+          image: ghcr.io/playit-cloud/playit-agent:latest
+          env:
+            - name: SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: playitgg-agent-token
+                  key: agent-token

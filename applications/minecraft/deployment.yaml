@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minecraft
+  namespace: minecraft
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: minecraft
+  template:
+    metadata:
+      labels:
+        app: minecraft
+    spec:
+      containers:
+        - name: minecraft
+          image: ghcr.io/itzg/minecraft-server:java21
+          env:
+            - name: EULA
+              value: "TRUE"
+            - name: MEMORY
+              value: "16G"
+            - name: TYPE
+              value: "FABRIC"
+            - name: VERSION
+              value: "LATEST"
+            - name: FABRIC_LOADER_VERSION
+              value: "LATEST"
+            - name: MODRINTH_PROJECTS
+              value: "lithium,ferrite-core,krypton,vmp-fabric,c2me-fabric"
+            - name: SERVER_IP
+              value: "0.0.0.0"
+            - name: MODRINTH_ALLOWED_VERSION_TYPE
+              value: "alpha"
+            - name: MOTD
+              value: "SPK sin uoffisielle minecraft server"
+            - name: DIFFICULTY
+              value: "hard"
+            - name: OPS
+              value: "NorskApe"
+            - name: MAX_PLAYERS
+              value: "50"
+            - name: SIMULATION_DISTANCE
+              value: "20"
+            - name: VIEW_DISTANCE
+              value: "20"
+            - name: SPAWN_PROTECTION
+              value: "0"
+          ports:
+            - containerPort: 25565
+          volumeMounts:
+            - name: minecraft-storage
+              mountPath: /data
+      volumes:
+        - name: minecraft-storage
+          persistentVolumeClaim:
+            claimName: minecraft-data

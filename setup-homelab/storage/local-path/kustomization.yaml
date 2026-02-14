@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: local-path-storage
+
+resources:
+  - ns.yaml
+  - storageclass.yaml
+  - provisioner-sa.yaml
+  - provisioner-role.yaml
+  - provisioner-config.yaml
+  - provisioner-rolebind.yaml
+  - provisioner-deployment.yaml
+  - provisioner-clusterrole.yaml
+  - provisioner-clusterrolebind.yaml
