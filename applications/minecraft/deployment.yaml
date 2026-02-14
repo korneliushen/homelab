@@ -34,11 +34,11 @@ spec:
             - name: MODRINTH_ALLOWED_VERSION_TYPE
               value: "alpha"
             - name: MOTD
-              value: "SPK sin uoffisielle minecraft server"
+              value: ""
             - name: DIFFICULTY
               value: "hard"
             - name: OPS
-              value: "NorskApe"
+              value: "korneliushen"
             - name: MAX_PLAYERS
               value: "50"
             - name: SIMULATION_DISTANCE
