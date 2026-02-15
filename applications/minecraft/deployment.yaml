@@ -20,7 +20,7 @@ spec:
             - name: EULA
               value: "TRUE"
             - name: MEMORY
-              value: "16G"
+              value: "32G"
             - name: TYPE
               value: "FABRIC"
             - name: VERSION
@@ -42,9 +42,9 @@ spec:
             - name: MAX_PLAYERS
               value: "50"
             - name: SIMULATION_DISTANCE
-              value: "20"
+              value: "10"
             - name: VIEW_DISTANCE
-              value: "32"
+              value: "16"
             - name: SPAWN_PROTECTION
               value: "0"
           ports:
