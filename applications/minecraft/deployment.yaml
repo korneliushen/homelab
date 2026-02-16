@@ -46,7 +46,7 @@ spec:
             - name: SIMULATION_DISTANCE
               value: "10"
             - name: VIEW_DISTANCE
-              value: "16"
+              value: "24"
             - name: SPAWN_PROTECTION
               value: "0"
           ports:
