@@ -39,6 +39,8 @@ spec:
               value: "easy"
             - name: OPS
               value: "korneliushen"
+            - name: LEVEL
+              value: "world2"
             - name: MAX_PLAYERS
               value: "50"
             - name: SIMULATION_DISTANCE
