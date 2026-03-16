@@ -1,0 +1,21 @@
+---
+apiVersion: apps/v1
+kind: deployment
+metadata:
+  name: nettside
+  namespace: handlelapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nettside
+  template:
+    metadata:
+      labels:
+        app: nettside
+    spec:
+      containers:
+      - name: nettside
+        image: henrikwk/handlelapp:latest
+        ports:
+        - containerPort: 3000
