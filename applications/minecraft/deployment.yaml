@@ -54,8 +54,7 @@ spec:
           volumeMounts:
             - name: minecraft-storage
               mountPath: /data
-          volumeMounts:
-            - name: minecraft-aternos-world
+            - name: extra-world
               mountPath: /data
       volumes:
         - name: minecraft-storage
