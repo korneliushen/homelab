@@ -40,7 +40,7 @@ spec:
             - name: OPS
               value: "korneliushen"
             - name: LEVEL
-              value: "world2"
+              value: "aternos-world"
             - name: MAX_PLAYERS
               value: "50"
             - name: SIMULATION_DISTANCE
@@ -54,7 +54,13 @@ spec:
           volumeMounts:
             - name: minecraft-storage
               mountPath: /data
+          volumeMounts:
+            - name: minecraft-aternos-world
+              mountPath: /data
       volumes:
         - name: minecraft-storage
           persistentVolumeClaim:
             claimName: minecraft-data
+        - name: extra-world
+          hostpath:
+            path: /mc-worlds/aternos-world
